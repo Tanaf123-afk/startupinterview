@@ -45,33 +45,33 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-200",
         scrolled
-          ? "bg-background/80 backdrop-blur-sm border-b shadow-sm"
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 shadow-sm"
           : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="font-bold text-xl">
+          <Link href="/" className="font-bold text-2xl text-blue-600 dark:text-blue-400">
             InterviewPro
           </Link>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <ModeToggle />
           {session ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   <User className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
@@ -89,18 +89,18 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" asChild>
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" asChild className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                 <Link href="/auth/login">Log in</Link>
               </Button>
-              <Button asChild>
+              <Button asChild className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white">
                 <Link href="/auth/register">Sign up</Link>
               </Button>
             </div>
           )}
           <DropdownMenu>
             <DropdownMenuTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="text-gray-700 dark:text-gray-300">
                 <Menu className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>

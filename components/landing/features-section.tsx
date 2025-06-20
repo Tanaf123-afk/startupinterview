@@ -43,7 +43,7 @@ export function FeaturesSection() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -54,19 +54,35 @@ export function FeaturesSection() {
   };
 
   return (
-    <section className="py-16 md:py-24">
-      <div className="container">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Everything You Need to Ace Your Interviews
+    <section className="py-20 lg:py-32 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+      {/* Background gradients */}
+      <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-gradient-to-br from-blue-200/40 to-transparent dark:from-blue-600/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-gradient-to-tl from-indigo-200/40 to-transparent dark:from-indigo-600/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-0 w-1/3 h-1/3 bg-gradient-to-r from-purple-200/30 to-transparent dark:from-purple-600/15 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-0 w-1/3 h-1/3 bg-gradient-to-l from-cyan-200/30 to-transparent dark:from-cyan-600/15 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <motion.div 
+          className="text-center space-y-6 mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium">
+            Features
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+            Everything You Need to
+            <span className="block text-blue-600 dark:text-blue-400">Ace Your Interviews</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Our comprehensive platform offers all the tools you need to practice and perfect your interview skills.
           </p>
-        </div>
+        </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -74,15 +90,15 @@ export function FeaturesSection() {
         >
           {features.map((feature, index) => (
             <motion.div key={index} variants={item}>
-              <Card className="h-full transition-all hover:shadow-md">
-                <CardHeader>
-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <feature.icon className="h-6 w-6 text-primary" />
+              <Card className="h-full bg-white dark:bg-gray-900 border-0 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <CardHeader className="pb-4">
+                  <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="h-7 w-7 text-white" />
                   </div>
-                  <CardTitle>{feature.title}</CardTitle>
+                  <CardTitle className="text-xl text-gray-900 dark:text-white">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">{feature.description}</CardDescription>
+                  <CardDescription className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</CardDescription>
                 </CardContent>
               </Card>
             </motion.div>

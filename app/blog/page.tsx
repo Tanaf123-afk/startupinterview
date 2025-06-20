@@ -18,13 +18,13 @@ const articles = [
 export default function BlogPage() {
   return (
     <div className="container max-w-3xl mx-auto py-16 px-4">
-      <h1 className="text-4xl font-bold mb-8">InterviewPro Blog</h1>
-      <p className="text-lg text-gray-700 mb-8">Insights, tips, and resources to help you succeed in your job search and interviews.</p>
+      <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">InterviewPro Blog</h1>
+      <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">Insights, tips, and resources to help you succeed in your job search and interviews.</p>
       <div className="space-y-8">
         {articles.map((article, idx) => (
-          <div key={idx} className="p-6 bg-white rounded-xl shadow">
-            <h2 className="text-2xl font-semibold mb-2">{article.title}</h2>
-            <p className="text-gray-600">{article.intro}</p>
+          <div key={idx} className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">
+            <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">{article.title}</h2>
+            <p className="text-gray-600 dark:text-gray-300">{article.intro}</p>
           </div>
         ))}
       </div>

@@ -69,7 +69,7 @@ export function RoleGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {DUMMY_ROLES.map((role) => (
-        <Card key={role.id} className="overflow-hidden hover:shadow-md transition-shadow">
+        <Card key={role.id} className="overflow-hidden hover:shadow-md transition-shadow bg-white dark:bg-gray-800">
           <CardHeader className="p-4">
             <div className="flex items-center space-x-4">
               <div className="relative h-12 w-12 rounded-lg overflow-hidden bg-muted">
@@ -81,15 +81,15 @@ export function RoleGrid() {
                 />
               </div>
               <div>
-                <h3 className="font-semibold">{role.company.name}</h3>
-                <p className="text-sm text-muted-foreground">{role.title}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-white">{role.company.name}</h3>
+                <p className="text-sm text-muted-foreground dark:text-gray-300">{role.title}</p>
               </div>
             </div>
           </CardHeader>
           <CardContent className="p-4 pt-0">
             <div className="flex items-center space-x-2">
-              <Badge variant="secondary">{role.type}</Badge>
-              <Badge variant="outline">{role.engineeringType}</Badge>
+              <Badge variant="secondary" className="dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600">{role.type}</Badge>
+              <Badge variant="outline" className="dark:border-gray-600 dark:text-gray-300">{role.engineeringType}</Badge>
             </div>
           </CardContent>
         </Card>

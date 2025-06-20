@@ -21,29 +21,29 @@ const ROLE_TYPES = [
 
 export function RoleFilters() {
   return (
-    <Card>
+    <Card className="bg-white dark:bg-gray-800">
       <CardHeader>
-        <CardTitle>Filters</CardTitle>
+        <CardTitle className="text-gray-900 dark:text-white">Filters</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-4">
-          <h3 className="font-medium">Type of Engineering</h3>
+          <h3 className="font-medium text-gray-900 dark:text-white">Type of Engineering</h3>
           <div className="space-y-2">
             {ENGINEERING_TYPES.map((type) => (
               <div key={type} className="flex items-center space-x-2">
                 <Checkbox id={type} />
-                <Label htmlFor={type}>{type}</Label>
+                <Label htmlFor={type} className="text-gray-700 dark:text-gray-300">{type}</Label>
               </div>
             ))}
           </div>
         </div>
         <div className="space-y-4">
-          <h3 className="font-medium">Role Type</h3>
+          <h3 className="font-medium text-gray-900 dark:text-white">Role Type</h3>
           <div className="space-y-2">
             {ROLE_TYPES.map((type) => (
               <div key={type} className="flex items-center space-x-2">
                 <Checkbox id={type} />
-                <Label htmlFor={type}>{type}</Label>
+                <Label htmlFor={type} className="text-gray-700 dark:text-gray-300">{type}</Label>
               </div>
             ))}
           </div>
