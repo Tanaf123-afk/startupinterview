@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Target, Video, Sparkles, Clock, Brain, TrendingUp, FileText, MessageSquare } from 'lucide-react';
+import { ArrowRight, Target, Video, Sparkles, Clock, Brain, TrendingUp, FileText, MessageSquare, Play } from 'lucide-react';
 
 export default function HowItWorks() {
   return (
@@ -11,6 +11,61 @@ export default function HowItWorks() {
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
             Master interviews with real-time feedback, tailored to your dream role
           </p>
+        </div>
+      </section>
+
+      {/* Video Showcase Section */}
+      <section className="pb-16 px-4 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Video Container */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
+              {/* Placeholder for video - you can replace this with an actual video component */}
+              <div className="w-full h-full flex items-center justify-center relative group cursor-pointer">
+                {/* Video thumbnail/placeholder */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-90"></div>
+                
+                {/* Play button overlay */}
+                <div className="relative z-10 flex flex-col items-center text-white">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 group-hover:bg-white/30 transition-all duration-300">
+                    <Play className="w-8 h-8 ml-1" />
+                  </div>
+                  <p className="text-lg font-medium">Watch Demo</p>
+                  <p className="text-sm opacity-80 mt-1">2:45 min</p>
+                </div>
+                
+                {/* Video preview elements */}
+                <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1 text-white text-sm">
+                  Live Demo
+                </div>
+                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1 text-white text-sm">
+                  HD Quality
+                </div>
+              </div>
+            </div>
+            
+            {/* Video description */}
+            <div className="mt-8 text-center">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                Key Features Showcased
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span>Role Selection & Customization</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span>Real-time Video Recording</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-600 dark:text-gray-300">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span>AI-Powered Feedback</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
